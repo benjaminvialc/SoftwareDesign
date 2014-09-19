@@ -5,37 +5,31 @@ Created on Mon Sep 15 22:21:14 2014
 @author: benjamin
 """
 
-def dos(f):
-    f()
-    f()
-    
-def cuatro(f):
-    dos(f)
-    dos(f)
 
-def vertical():
-    print '!    ',
-    
-def horizontal():
-    print '+----',
-    
-def verticales():
-    dos(vertical)
-    print '!'
+def row(i):
+    while i > 0:    
+        print '+ - - - -',
+        i = i - 1
 
-def horizontales():
-    dos(horizontal)
+def coloumn(i):
+    while i > 0:
+        print '|        ',
+        i = i - 1
+
+def grid(i):
+    x = i
+    while x > 0:    
+        row(i)
+        print '+'
+        n = 4
+        while n > 0:
+            coloumn(i)
+            print '|'
+            n = n - 1
+        x = x - 1
+    row(i)
     print '+'
-    
-def fila():
-    horizontales()
-    cuatro(verticales)
-    
-def grid():
-    dos(fila)
-    horizontales()
-    
-grid()
 
+x = int(raw_input('x='))
 
-        
+grid(x)
